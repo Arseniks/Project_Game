@@ -204,8 +204,16 @@ class Ship(pygame.sprite.Sprite):
     def move(self):
         t = self.clock.tick()
         self.y += (100 * t / 1000) * self.speed_y
+        if self.y > 600 - 100:
+            self.y = 600 - 100
+        if self.y < 0:
+            self.y = 0
         self.rect.y = int(self.y)
         self.x += (100 * t / 1000) * self.speed_x
+        if self.x > 800 - 100:
+            self.x = 800 - 100
+        if self.x < 0:
+            self.x = 0
         self.rect.x = int(self.x)
 
 
